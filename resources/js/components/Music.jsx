@@ -1,37 +1,37 @@
 import { useEffect, useRef } from 'react';
 
 const TRACKS = [
-    // {
-    //     title: 'Neon',
-    //     artist: 'Tevinu Wijesinghe',
-    //     genre: 'Electronic / Afrobeats',
-    //     year: '2024',
-    //     emoji: '🎶',
-    //     color: '#a855f7',
-    //     // SoundCloud embed or YouTube - using YouTube here
-    //     youtubeId: 'jfKfPfyJRdk', // placeholder lofi
-    //     featured: false,
-    // },
-    // {
-    //     title: 'Digital Soul',
-    //     artist: 'Tevinu Wijesinghe',
-    //     genre: 'R&B / Lo-fi',
-    //     year: '2024',
-    //     emoji: '🎵',
-    //     color: '#3b82f6',
-    //     youtubeId: 'DWcJFNfaw9c',
-    //     featured: false,
-    // },
-    // {
-    //     title: 'Code & Rhythm',
-    //     artist: 'Tevinu Wijesinghe',
-    //     genre: 'Afrobeats / Trap',
-    //     year: '2023',
-    //     emoji: '🥁',
-    //     color: '#ec4899',
-    //     youtubeId: 'lTRiuFIWV54',
-    //     featured: false,
-    // },
+    {
+        title: 'Neon',
+        artist: 'Tevinu Wijesinghe',
+        genre: 'Electronic / Afrobeats',
+        year: '2024',
+        emoji: '🎶',
+        color: '#a855f7',
+        // SoundCloud embed or YouTube - using YouTube here
+        youtubeId: 'jfKfPfyJRdk', // placeholder lofi
+        featured: false,
+    },
+    {
+        title: 'Digital Soul',
+        artist: 'Tevinu Wijesinghe',
+        genre: 'R&B / Lo-fi',
+        year: '2024',
+        emoji: '🎵',
+        color: '#3b82f6',
+        youtubeId: 'DWcJFNfaw9c',
+        featured: false,
+    },
+    {
+        title: 'Code & Rhythm',
+        artist: 'Tevinu Wijesinghe',
+        genre: 'Afrobeats / Trap',
+        year: '2023',
+        emoji: '🥁',
+        color: '#ec4899',
+        youtubeId: 'lTRiuFIWV54',
+        featured: false,
+    },
 ];
 
 const RECORDINGS = [
