@@ -1,10 +1,56 @@
 import { useEffect, useRef, useState } from 'react';
 
+const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || '';
+
+function SocialIcon({ platform }) {
+    switch (platform) {
+        case 'github':
+            return (
+                <svg viewBox="0 0 24 24" aria-hidden="true" className="social-icon-svg">
+                    <path
+                        fill="currentColor"
+                        d="M12 1.5C5.9 1.5 1 6.4 1 12.5c0 4.8 3.1 8.9 7.4 10.3.5.1.7-.2.7-.5v-1.8c-3 0-3.7-1.3-3.7-1.3-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.8-1.5-2.4-.3-4.9-1.2-4.9-5.3 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 2.9 1.1a10 10 0 0 1 5.2 0c2-1.4 2.9-1.1 2.9-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.8 1.1 3 0 4.1-2.5 5-4.9 5.3.4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A11.5 11.5 0 0 0 23 12.5C23 6.4 18.1 1.5 12 1.5Z"
+                    />
+                </svg>
+            );
+        case 'linkedin':
+            return (
+                <svg viewBox="0 0 24 24" aria-hidden="true" className="social-icon-svg">
+                    <path
+                        fill="currentColor"
+                        d="M6.94 3.75a1.56 1.56 0 1 1 0 3.12 1.56 1.56 0 0 1 0-3.12Zm-1.44 2.3h2.88v8.25H5.5V6.05Zm4.7 0h2.76v1.12h.04c.38-.72 1.32-1.48 2.72-1.48 2.91 0 3.45 1.91 3.45 4.4v5.21h-2.88v-4.9c0-1.17-.03-2.68-1.64-2.68-1.64 0-1.89 1.28-1.89 2.6v5h-2.88V6.05Z"
+                    />
+                </svg>
+            );
+        case 'instagram':
+            return (
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        fill="currentColor"
+                        d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm4.5 3a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Zm5.25-2.75a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"
+                    />
+                </svg>
+            );
+        case 'facebook':
+            return (
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        fill="currentColor"
+                        d="M13.5 22v-8.5h2.85l.43-3.3H13.5V4.8c0-.95.26-1.6 1.64-1.6h1.75V.15A23.73 23.73 0 0 0 14.25 0c-2.52 0-4.25 1.54-4.25 4.37v2.44H7.15v3.3h2.85V22h3.5Z"
+                    />
+                </svg>
+            );
+        default:
+            return null;
+    }
+}
+
 export default function Contact() {
     const ref = useRef(null);
     const [form, setForm] = useState({ name: '', email: '', message: '' });
     const [sent, setSent] = useState(false);
     const [sending, setSending] = useState(false);
+    const [error, setError] = useState('');
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -17,17 +63,61 @@ export default function Contact() {
 
     const handleChange = (e) => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setSending(true);
-        // Simulate send
+    const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setSending(true);
+    setSent(false);
+    setError('');
+
+    try {
+        const apiBase = (
+            import.meta.env.VITE_API_URL || ''
+        ).replace(/\/$/, '');
+
+        const response = await fetch(`${apiBase}/contact`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+            },
+            body: JSON.stringify(form),
+        });
+
+        const data = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+            const validationError = data.errors
+                ? Object.values(data.errors).flat()[0]
+                : null;
+
+            throw new Error(
+                validationError ||
+                data.message ||
+                'Unable to send the message.'
+            );
+        }
+
+        setSent(true);
+        setForm({
+            name: '',
+            email: '',
+            message: '',
+        });
+
         setTimeout(() => {
-            setSending(false);
-            setSent(true);
-            setForm({ name: '', email: '', message: '' });
-            setTimeout(() => setSent(false), 4000);
-        }, 1500);
-    };
+            setSent(false);
+        }, 4000);
+    } catch (submitError) {
+        setError(
+            submitError instanceof Error
+                ? submitError.message
+                : 'Unable to send the message.'
+        );
+    } finally {
+        setSending(false);
+    }
+};
 
     return (
         <section id="contact" className="section" ref={ref} style={{ background: 'rgba(15,23,42,0.3)' }}>
@@ -47,17 +137,17 @@ export default function Contact() {
                             extraordinary together.
                         </p>
 
-                        <a href="mailto:Tevinu@example.com" className="contact-detail">
+                        <a href="mailto:tevinuwijesinghe@gmail.com" className="contact-detail">
                             <span className="contact-detail-icon">📧</span>
-                            Tevinu@example.com
+                            tevinuwijesinghe@gmail.com
                         </a>
-                        <a href="tel:+254700000000" className="contact-detail">
+                        <a href="tel:+94740927966" className="contact-detail">
                             <span className="contact-detail-icon">📞</span>
-                            +254 700 000 000
+                            +94 740 927 966
                         </a>
                         <span className="contact-detail">
                             <span className="contact-detail-icon">📍</span>
-                            Nairobi, Kenya
+                            No.22, Ambagaha Junction, Rajagiriya, Colombo, Sri Lanka
                         </span>
 
                         <a href="/cv.pdf" download className="cv-btn">
@@ -66,21 +156,21 @@ export default function Contact() {
 
                         <div className="social-links" style={{ marginTop: '2rem' }}>
                             {[
-                                { icon: '💻', href: 'https://github.com', label: 'GitHub' },
-                                { icon: '🔗', href: 'https://linkedin.com', label: 'LinkedIn' },
-                                { icon: '📸', href: 'https://instagram.com', label: 'Instagram' },
-                                { icon: '🐦', href: 'https://twitter.com', label: 'Twitter' },
-                                { icon: '☁️', href: '#', label: 'SoundCloud' },
-                            ].map(s => (
+                                { platform: 'github', href: 'https://github.com/tevinuwijesinghe', label: 'GitHub' },
+                                { platform: 'linkedin', href: 'https://www.linkedin.com/in/tevinu-wijesinghe-04786a311', label: 'LinkedIn' },
+                                { platform: 'instagram', href: 'https://www.instagram.com/tevinu_manuditha/?hl=en', label: 'Instagram' },
+                                { platform: 'facebook', href: 'https://web.facebook.com/profile.php?id=100083221419517', label: 'Facebook' },
+                            ].map((social) => (
                                 <a
-                                    key={s.label}
-                                    href={s.href}
+                                    key={social.label}
+                                    href={social.href}
                                     className="social-link"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    title={s.label}
+                                    title={social.label}
+                                    aria-label={social.label}
                                 >
-                                    {s.icon}
+                                    <SocialIcon platform={social.platform} />
                                 </a>
                             ))}
                         </div>
@@ -170,6 +260,7 @@ export default function Contact() {
                                 <button type="submit" className="form-submit" disabled={sending}>
                                     {sending ? '⏳ SENDING...' : '🚀 SEND MESSAGE'}
                                 </button>
+                                {error ? <p style={{ color: '#f87171', fontSize: '0.85rem', marginTop: '0.5rem' }}>{error}</p> : null}
                             </form>
                         )}
                     </div>
