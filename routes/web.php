@@ -11,3 +11,9 @@ Route::get('/', function () {
 Route::post('/contact', [ContactController::class, 'send'])
     ->withoutMiddleware([VerifyCsrfToken::class])
     ->middleware('throttle:5,1');
+
+Route::get('/', function () {
+    return response()->json([
+        'status' => 'Portfolio backend is running',
+    ]);
+});
