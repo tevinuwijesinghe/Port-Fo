@@ -66,37 +66,40 @@ export default function About() {
                     {/* Text side */}
                     <div className="about-text">
                         <p className="reveal reveal-delay-2">
-                            Hey, I'm <strong style={{ color: 'var(--text-primary)' }}>Tevinu Wijesinghe</strong> — a full-stack software engineer and music producer
-                            based in Nairobi, Kenya. My journey started with a fascination for how technology
-                            can transform ideas into real-world impact. I've been building digital solutions
-                            since 2021, turning complex problems into elegant, scalable systems.
+                            I am a Software Engineering undergraduate based in Rajagiriya, Colombo, Sri Lanka. I am currently completing my BSc (Hons) in Software Engineering at
+                            the Java Institute for Advanced Technology, affiliated with Birmingham City University.
+                            My experience includes full-stack development, frontend development, mobile application development, software testing, debugging, and database management. 
+                            During my internship at Think Tank Technologies, I completed more than 960 hours of industry training and gained practical experience working within the software development lifecycle.
                         </p>
                         <p className="reveal reveal-delay-2">
-                            By day, I architect robust applications — from mobile apps and APIs to admin dashboards
-                            and booking platforms. My stack includes <strong style={{ color: 'var(--neon-purple)' }}>React</strong>,{' '}
-                            <strong style={{ color: 'var(--neon-purple)' }}>Laravel</strong>,{' '}
-                            <strong style={{ color: 'var(--neon-purple)' }}>Firebase</strong>, and Android development.
-                            I believe great software should be both functional and beautiful.
+                            I have developed projects such as <strong style={{ color: 'var(--text-primary)' }}>home-service booking platforms, project management systems, e-commerce applications, 
+                            real-time chat systems, mobile applications, WordPress websites, and desktop point-of-sale systems</strong>.
+
+                            My main technologies include <strong style={{ color: 'var(--neon-purple)' }}>Java, PHP, Laravel, React.js, JavaScript, TypeScript, Tailwind CSS, MySQL, 
+                            PostgreSQL, Firebase, Hibernate, Jakarta EE, and Android development</strong>.
+
                         </p>
                         <p className="reveal reveal-delay-3">
-                            By night, I produce music that blends Afrobeats, R&amp;B, and electronic elements —
-                            using FL Studio and Ableton to craft soundscapes that evoke emotion.
-                            Music, like code, is about crafting something from nothing with pure intention.
-                            Both disciplines demand creativity, technical skill, and relentless iteration.
+                           Outside software development, I enjoy exploring music production and creative digital projects. 
+                           Both software and music require creativity, patience, experimentation, and continuous improvement.
                         </p>
 
                         <div className="about-stats reveal reveal-delay-3">
                             <div className="stat-item">
+                                <div className="stat-num">960+</div>
+                                <div className="stat-label">Internship Hours</div>
+                            </div>
+                            <div className="stat-item">
                                 <div className="stat-num">15+</div>
-                                <div className="stat-label">Projects Built</div>
+                                <div className="stat-label">Software Projects</div>
                             </div>
                             <div className="stat-item">
-                                <div className="stat-num">8+</div>
-                                <div className="stat-label">Tracks Released</div>
-                            </div>
-                            <div className="stat-item">
-                                <div className="stat-num">3+</div>
+                                <div className="stat-num">1+</div>
                                 <div className="stat-label">Happy Clients</div>
+                            </div>
+                            <div className="stat-item">
+                                <div className="stat-num">2026</div>
+                                <div className="stat-label">Expected Graduation Year</div>
                             </div>
                         </div>
 

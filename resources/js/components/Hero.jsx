@@ -161,7 +161,7 @@ export default function Hero() {
 
                     {/* Tech stack pills */}
                     <div style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap', marginTop: '2.5rem', opacity: 0.7 }}>
-                        {['React', 'Laravel', 'Firebase', 'Android', 'FL Studio', 'Ableton'].map(t => (
+                        {['Java','React', 'Laravel','Jakarta EE', 'Firebase', 'Android', 'FL Studio', 'Cubase'].map(t => (
                             <span key={t} style={{
                                 padding: '0.25rem 0.65rem',
                                 borderRadius: '999px',
