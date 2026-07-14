@@ -3,14 +3,15 @@ import { useEffect, useRef } from 'react';
 const PROJECTS = [
     {
         title: 'ServiGo Mobile App',
-        desc: 'An on-demand service booking platform connecting customers with local service providers. Features real-time tracking, in-app payments, and provider ratings.',
-        stack: ['React Native', 'Firebase', 'Laravel', 'Stripe'],
+        desc: 'A home-service booking app that connects customers with skilled technicians. It includes online booking, PayHere payments, live location tracking, ratings, notifications, and an admin panel.',
+        stack: ['Android Java','Firebase','PHP REST API','Laravel','MySQL','Google Maps','PayHere',],
         emoji: '📱',
+        image: '/images/servilogonobg.png',
         gradient: 'from-purple-500 to-blue-500',
         color: '#a855f7',
         demo: '#',
         github: '#',
-        doc: '/docs/ServiGo Project Documentation - Copy.pdf',
+        doc: '/docs/ServiGo Project Documentation - Portfolio.pdf',
     },
     {
         title: 'Admin Analytics Dashboard',
@@ -68,7 +69,7 @@ export default function Projects() {
                 </h2>
                 <p style={{ color: 'var(--text-muted)', maxWidth: 520, fontSize: '0.95rem', lineHeight: 1.8, marginTop: '0.75rem', marginBottom: '3rem' }}
                    className="reveal reveal-delay-2">
-                    A curated selection of my best work — spanning mobile apps, web platforms, and full-stack solutions.
+                    A selection of projects demonstrating my experience in web development, enterprise Java, mobile applications, databases, and software architecture.
                 </p>
 
                 <div className="projects-grid">
@@ -94,7 +95,20 @@ export default function Projects() {
                                     position: 'relative',
                                     transition: 'all 0.4s ease',
                                 }}>
-                                    <div style={{ fontSize: '3.5rem', lineHeight: 1 }}>{p.emoji}</div>
+                                    {p.image ? (
+                                        <img
+                                            src={p.image}
+                                            alt={`${p.title} preview`}
+                                            style={{
+                                                maxWidth: '72%',
+                                                maxHeight: '72%',
+                                                objectFit: 'contain',
+                                                filter: 'drop-shadow(0 0 18px rgba(255,255,255,0.16))',
+                                            }}
+                                        />
+                                    ) : (
+                                        <div style={{ fontSize: '3.5rem', lineHeight: 1 }}>{p.emoji}</div>
+                                    )}
                                     {/* Decorative circles */}
                                     <div style={{
                                         position: 'absolute', width: '120px', height: '120px',

@@ -318,8 +318,8 @@ export default function Contact() {
                         style={{
                             display: 'flex',
                             flexDirection: 'column',
-                            alignItems: 'left',
-                            marginLeft: '20%',
+                            alignItems: 'center',
+                            marginLeft: 'auto',
                             marginRight: 'auto',
                             gap: '0.75rem',
                         }}

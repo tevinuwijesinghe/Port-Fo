@@ -105,7 +105,7 @@ export default function About() {
 
                         <a href="#contact" className="btn-primary" style={{ marginTop: '2rem', display: 'inline-flex' }}
                             onClick={e => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>
-                            <span>📩</span>
+                            {/* <span>📩</span> */}
                             <span>Let's Work Together</span>
                         </a>
                     </div>
