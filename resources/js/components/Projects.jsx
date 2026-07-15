@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 const PROJECTS = [
     {
@@ -14,15 +15,31 @@ const PROJECTS = [
         doc: '/docs/ServiGo Project Documentation - Portfolio.pdf',
     },
     {
-        title: 'Admin Analytics Dashboard',
-        desc: 'A comprehensive admin panel with real-time analytics, user management, role-based access control, and data visualization for multiple service verticals.',
-        stack: ['React', 'Laravel', 'MySQL', 'Chart.js'],
-        emoji: '📊',
-        gradient: 'from-blue-500 to-cyan-500',
-        color: '#3b82f6',
+        title: 'Kuweni The Store POS System',
+        desc: 'A desktop point-of-sale system for managing customers, employees, products, stock, invoices, and business reports with role-based access for admins and employees.',
+        stack: [
+            'Java Swing',
+            'MySQL',
+            'JDBC',
+            'JasperReports',
+            'FlatLaf',
+        ],
+        emoji: '🧾',
+        image: '/images/kuweni_1.svg',
+        gradient: 'from-yellow-500 to-gray-900',
+        color: '#d4af37',
         demo: '#',
         github: '#',
-        doc: '#',
+        docs: [
+            {
+                Label: 'Project Proposal Document',
+                url: '/docs/Kuweni Project Proposal Portfolio.pdf',
+            },
+            {
+                Label: 'Project Documentation',
+                url: '/docs/Kuweni Project Document Portfolio.pdf',
+            }
+        ],
     },
     {
         title: 'SmartBook — Booking System',
@@ -50,6 +67,9 @@ const PROJECTS = [
 
 export default function Projects() {
     const ref = useRef(null);
+    const [openIndex, setOpenIndex] = useState(null);
+    const menuRef = useRef(null);
+    const [menuStyle, setMenuStyle] = useState(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -59,6 +79,26 @@ export default function Projects() {
         ref.current?.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         return () => observer.disconnect();
     }, []);
+
+    // Close dropdown on scroll/resize or outside interaction
+    useEffect(() => {
+        if (openIndex === null) return;
+        const onClose = () => setOpenIndex(null);
+        const onDown = (e) => {
+            // if click is on a docs button or inside the menu, don't close
+            if (e.target.closest && e.target.closest('[data-docs-button]')) return;
+            if (menuRef.current && menuRef.current.contains(e.target)) return;
+            onClose();
+        };
+        window.addEventListener('scroll', onClose, true);
+        window.addEventListener('resize', onClose);
+        document.addEventListener('mousedown', onDown);
+        return () => {
+            window.removeEventListener('scroll', onClose, true);
+            window.removeEventListener('resize', onClose);
+            document.removeEventListener('mousedown', onDown);
+        };
+    }, [openIndex]);
 
     return (
         <section id="projects" className="section" ref={ref} style={{ background: 'rgba(15,23,42,0.3)' }}>
@@ -77,7 +117,7 @@ export default function Projects() {
                         <div
                             key={p.title}
                             className={`glass-card project-card reveal reveal-delay-${(i % 2) + 1}`}
-                            style={{ gridTemplateColumns: '1fr 1fr' }}
+                                style={{ gridTemplateColumns: '1fr 1fr', overflow: 'visible' }}
                         >
                             {/* Visual Side */}
                             <div style={{ position: 'relative', overflow: 'hidden' }}>
@@ -155,11 +195,38 @@ export default function Projects() {
                                        style={{ borderColor: `${p.color}50`, color: p.color }}>
                                         ⭐ GitHub
                                     </a>
-                                    {p.doc && (
-                                        <a href={p.doc} className="project-btn secondary" target="_blank" rel="noopener noreferrer"
-                                           style={{ borderColor: `${p.color}50`, color: p.color }}>
-                                            📄 Docs
-                                        </a>
+                                    {p.docs && p.docs.length > 0 ? (
+                                        <div style={{ position: 'relative' }}>
+                                            <button data-docs-button onClick={(e) => {
+                                                if (openIndex === i) {
+                                                    setOpenIndex(null);
+                                                    return;
+                                                }
+                                                // compute menu position relative to viewport and page scroll using event target
+                                                const rect = e.currentTarget.getBoundingClientRect();
+                                                setMenuStyle({ position: 'fixed', top: rect.bottom + 8, left: rect.left, minWidth: Math.max(240, rect.width), background: 'rgba(15,23,42,0.95)', border: `1px solid ${p.color}22`, padding: '0.5rem', borderRadius: 8, zIndex: 9999 });
+                                                setOpenIndex(i);
+                                            }} className="project-btn secondary" type="button"
+                                                    style={{ borderColor: `${p.color}50`, color: p.color, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                                                📄 Docs ▾
+                                            </button>
+                                            {openIndex === i && menuStyle && createPortal(
+                                                <div ref={menuRef} style={menuStyle}>
+                                                    {p.docs.map((d) => (
+                                                        <a key={d.url} href={d.url} target="_blank" rel="noopener noreferrer" style={{ display: 'block', padding: '0.45rem 0.6rem', color: p.color, borderRadius: 6, textDecoration: 'none' }}>
+                                                            {d.Label || d.url.split('/').pop()}
+                                                        </a>
+                                                    ))}
+                                                </div>, document.body)
+                                            }
+                                        </div>
+                                    ) : (
+                                        p.doc && (
+                                            <a href={p.doc} className="project-btn secondary" target="_blank" rel="noopener noreferrer"
+                                               style={{ borderColor: `${p.color}50`, color: p.color }}>
+                                                📄 Docs
+                                            </a>
+                                        )
                                     )}
                                 </div>
                             </div>
