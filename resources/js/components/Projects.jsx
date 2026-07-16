@@ -38,7 +38,7 @@ const PROJECTS = [
         docs: [
             {
                 label: 'Project Proposal Document',
-                url: '/docs/Kuweni Project Proposal Portfolio.pdf',
+                href: '/docs/Kuweni Project Proposal Portfolio.pdf',
             },
             {
                 label: 'Project Documentation',
