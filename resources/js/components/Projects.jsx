@@ -11,8 +11,13 @@ const PROJECTS = [
         gradient: 'from-purple-500 to-blue-500',
         color: '#a855f7',
         demo: '#',
-        github: '#',
-        doc: '/docs/ServiGo Project Documentation - Portfolio.pdf',
+        github: 'https://github.com/tevinuwijesinghe/ServiGo',
+        docs:[
+            {
+                Label: 'Project Documentnation',
+                url: '/docs/ServiGo Project Documentation - Portfolio.pdf',
+            },
+        ],
     },
     {
         title: 'Kuweni The Store POS System',
@@ -42,26 +47,55 @@ const PROJECTS = [
         ],
     },
     {
-        title: 'SmartBook — Booking System',
-        desc: 'Fully featured appointment and resource booking system with calendar sync, automated reminders, payment processing, and an intuitive staff management interface.',
-        stack: ['Vue.js', 'Laravel', 'MySQL', 'Twilio'],
-        emoji: '📅',
-        gradient: 'from-pink-500 to-purple-500',
-        color: '#ec4899',
+        title: 'Hot Chop Web Application',
+        desc: 'A restaurant e-commerce website where users can browse food items, manage carts, make PayHere payments, view purchase history, and update profiles. It also includes an admin panel for managing products, users, sales, and reports.',
+        stack: [
+            'PHP',
+            'JavaScript',
+            'MySQL',
+            'Bootstrap',
+            'AJAX',
+            'PayHere',
+            'PHPMailer',
+        ],
+        emoji: '🍔',
+        image: '/images/hotchop.png',
+        gradient: 'from-orange-500 to-yellow-500',
+        color: '#f59e0b',
         demo: '#',
-        github: '#',
-        doc: '#',
+        github: 'https://github.com/tevinuwijesinghe/HotChop',
+        docs: [
+            {
+                Label: 'Project Documentation',
+                url: '/docs/HotChop Project Document Portfolio.pdf',
+            }
+        ],
     },
     {
-        title: 'Artist Portfolio Platform',
-        desc: 'A dynamic portfolio and fan engagement platform for music artists — featuring song showcases, lyric pages, gallery sections, and integrated media players.',
-        stack: ['Next.js', 'Tailwind', 'Firebase', 'Vercel'],
-        emoji: '🎨',
-        gradient: 'from-cyan-500 to-green-500',
-        color: '#06b6d4',
+        title: 'Yoo Chat Mobile App',
+        desc: 'A cross-platform real-time chat app with contact management, profile customization, message status indicators, last seen, emoji support, and light and dark themes.',
+        stack: [
+            'React Native',
+            'TypeScript',
+            'NativeWind',
+            'Java Servlets',
+            'WebSocket',
+            'Hibernate',
+            'MySQL',
+            'GlassFish',
+        ],
+        emoji: '💬',
+        image: '/images/yoo-chat-logo.png',
+        gradient: 'from-cyan-500 to-blue-500',
+        color: '#38bdf8',
         demo: '#',
         github: '#',
-        doc: '#',
+        docs: [
+            {
+                label: 'Project Documentation',
+                href: '/docs/YooChat Project Documentation Portfolio.pdf',
+            }
+        ],
     },
 ];
 
