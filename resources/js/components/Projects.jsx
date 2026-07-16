@@ -14,7 +14,7 @@ const PROJECTS = [
         github: 'https://github.com/tevinuwijesinghe/ServiGo',
         docs:[
             {
-                Label: 'Project Documentnation',
+                label: 'Project Documentnation',
                 url: '/docs/ServiGo Project Documentation - Portfolio.pdf',
             },
         ],
@@ -37,11 +37,11 @@ const PROJECTS = [
         github: '#',
         docs: [
             {
-                Label: 'Project Proposal Document',
+                label: 'Project Proposal Document',
                 url: '/docs/Kuweni Project Proposal Portfolio.pdf',
             },
             {
-                Label: 'Project Documentation',
+                label: 'Project Documentation',
                 url: '/docs/Kuweni Project Document Portfolio.pdf',
             }
         ],
@@ -66,7 +66,7 @@ const PROJECTS = [
         github: 'https://github.com/tevinuwijesinghe/HotChop',
         docs: [
             {
-                Label: 'Project Documentation',
+                label: 'Project Documentation',
                 url: '/docs/HotChop Project Document Portfolio.pdf',
             }
         ],
@@ -246,9 +246,21 @@ export default function Projects() {
                                             </button>
                                             {openIndex === i && menuStyle && createPortal(
                                                 <div ref={menuRef} style={menuStyle}>
-                                                    {p.docs.map((d) => (
-                                                        <a key={d.url} href={d.url} target="_blank" rel="noopener noreferrer" style={{ display: 'block', padding: '0.45rem 0.6rem', color: p.color, borderRadius: 6, textDecoration: 'none' }}>
-                                                            {d.Label || d.url.split('/').pop()}
+                                                    {p.docs.map((document) => (
+                                                        <a
+                                                            key={document.href}
+                                                            href={document.href}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            style={{
+                                                                display: 'block',
+                                                                padding: '0.45rem 0.6rem',
+                                                                color: p.color,
+                                                                borderRadius: 6,
+                                                                textDecoration: 'none',
+                                                            }}
+                                                        >
+                                                            📄 {document.label}
                                                         </a>
                                                     ))}
                                                 </div>, document.body)
