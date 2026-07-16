@@ -15,7 +15,7 @@ const PROJECTS = [
         docs:[
             {
                 label: 'Project Documentnation',
-                url: '/docs/ServiGo Project Documentation - Portfolio.pdf',
+                href: '/docs/ServiGo Project Documentation - Portfolio.pdf',
             },
         ],
     },
@@ -42,7 +42,7 @@ const PROJECTS = [
             },
             {
                 label: 'Project Documentation',
-                url: '/docs/Kuweni Project Document Portfolio.pdf',
+                href: '/docs/Kuweni Project Document Portfolio.pdf',
             }
         ],
     },
@@ -67,7 +67,7 @@ const PROJECTS = [
         docs: [
             {
                 label: 'Project Documentation',
-                url: '/docs/HotChop Project Document Portfolio.pdf',
+                href: '/docs/HotChop Project Document Portfolio.pdf',
             }
         ],
     },
