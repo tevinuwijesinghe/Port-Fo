@@ -46,7 +46,7 @@ const RECORDINGS = [
         featured: false,
     },
     {
-        title: 'Studio Session #1',
+        title: 'Studio Session #2 (Lu)',
         artist: 'Tevinu Wijesinghe',
         genre: 'Raw Audio',
         year: '2025',
@@ -84,7 +84,7 @@ const FEATURED = {
     title: 'Nawum Kale',
     artist: 'Charitha Attalage | Chamara Nirmal | Chandrasena Thalangama',
     genre: '',
-    desc: 'A fusion of soulful melodies and electronic production — inspired by late night coding sessions and the rhythm of data flowing through circuits.',
+    desc: 'A fusion of soulful melodies',
     tiktokId: '7633064254299573511',
     emoji: '🌙',
 };
@@ -344,7 +344,7 @@ export default function Music() {
                 </div>
 
                 {/* Soundcloud / Spotify links */}
-                <div style={{ textAlign: 'center', marginTop: '4rem' }} className="reveal">
+                 {/*  <div style={{ textAlign: 'center', marginTop: '4rem' }} className="reveal">
                     <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem', marginBottom: '1.25rem' }}>
                         Find my music on your favorite platforms
                     </p>
@@ -373,7 +373,7 @@ export default function Music() {
                             </a>
                         ))}
                     </div>
-                </div>
+                </div>*/}
             </div>
         </section>
     );

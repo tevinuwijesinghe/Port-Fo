@@ -22,7 +22,7 @@ const CATEGORIES = [
             { name: 'RESTful APIs', pct: 85 },
             { name: 'MySQL / PostgreSQL', pct: 80 },
             { name: 'Node.js', pct: 72 },
-            { name: 'Python', pct: 65 },
+            { name: 'Python', pct: 35 },
         ],
     },
     {
@@ -30,7 +30,7 @@ const CATEGORIES = [
         icon: '📱',
         color: '#ec4899',
         skills: [
-            { name: 'Android (Java/Kotlin)', pct: 82 },
+            { name: 'Android (Java)', pct: 82 },
             { name: 'React Native', pct: 75 },
             { name: 'Flutter (Basics)', pct: 55 },
         ],
@@ -129,7 +129,7 @@ export default function Skills() {
                         ALSO FAMILIAR WITH
                     </p>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.65rem', justifyContent: 'center', maxWidth: '700px', margin: '0 auto' }}>
-                        {['Docker', 'Redis', 'GraphQL', 'TypeScript', 'Sass', 'AWS Basics', 'Linux', 'Postman', 'VS Code', 'Webpack', 'Vite', 'Notion'].map(t => (
+                        {['WordPress', 'TypeScript', 'Sass', 'AWS Basics', 'Postman', 'VS Code', 'Webpack', 'Vite', 'NetBeans'].map(t => (
                             <span key={t} style={{
                                 padding: '0.4rem 0.9rem',
                                 borderRadius: '999px',

@@ -15,9 +15,9 @@ const generateContributions = () => {
 
 const STATS = [
     { value: '240+', key: 'Commits This Year' },
-    { value: '18', key: 'Repositories' },
+    { value: '20', key: 'Repositories' },
     { value: '4', key: 'Open Source Contributions' },
-    { value: '6', key: 'Stars Earned' },
+    { value: '1', key: 'Achievements' },
 ];
 
 export default function Stats() {
@@ -50,8 +50,8 @@ export default function Stats() {
                     ))}
                 </div>
 
-                <div className="glass-card github-contrib reveal reveal-delay-2">
-                    <p style={{
+                {/* <div className="glass-card github-contrib reveal reveal-delay-2"> */}
+                    {/* <p style={{
                         fontFamily: 'Orbitron, monospace',
                         fontSize: '0.75rem',
                         letterSpacing: '0.15em',
@@ -69,15 +69,15 @@ export default function Stats() {
                                 title={`${lvl * 3} contributions`}
                             />
                         ))}
-                    </div>
+                    </div> */}
                     <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '0.5rem', marginTop: '0.75rem' }}>
-                        <span style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>Less</span>
-                        {[0, 1, 2, 3, 4].map(l => (
+                        {/* <span style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>Less</span> */}
+                        {/* {[0, 1, 2, 3, 4].map(l => (
                             <div key={l} className={`contrib-cell ${l > 0 ? `l${l}` : ''}`} />
-                        ))}
-                        <span style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>More</span>
+                        ))} */}
+                        {/* <span style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>More</span> */}
                     </div>
-                </div>
+                {/* </div> */}
 
                 {/* GitHub button */}
                 <div style={{ textAlign: 'center', marginTop: '2rem' }} className="reveal">
