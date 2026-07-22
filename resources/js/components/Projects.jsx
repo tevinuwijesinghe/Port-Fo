@@ -281,12 +281,12 @@ export default function Projects() {
                 </div>
 
                 {/* View/Download All Projects Doc */}
-                <div style={{ textAlign: 'center', marginTop: '4rem' }} className="reveal">
+                {/* <div style={{ textAlign: 'center', marginTop: '4rem' }} className="reveal">
                     <a href="/docs/projects-portfolio.pdf" className="btn-primary" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', padding: '1rem 2rem', fontSize: '1rem', background: 'linear-gradient(135deg, #a855f7, #3b82f6)', boxShadow: '0 10px 25px -5px rgba(168,85,247,0.4)' }}>
                         <span>📄</span>
                         <span>View Projects Document</span>
                     </a>
-                </div>
+                </div> */}
             </div>
         </section>
     );
