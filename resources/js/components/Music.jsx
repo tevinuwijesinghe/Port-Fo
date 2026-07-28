@@ -35,26 +35,26 @@ const TRACKS = [
 ];
 
 const RECORDINGS = [
-    {
-        title: 'Studio Session #1',
-        artist: 'Tevinu Wijesinghe',
-        genre: 'Raw Audio',
-        year: '2025',
-        emoji: '🎙️',
-        color: '#f59e0b',
-        audioSrc: '/recordings/perawadanak_nathi.mp3', // <-- Replace with your actual audio path
-        featured: false,
-    },
-    {
-        title: 'Studio Session #2 (Lu)',
-        artist: 'Tevinu Wijesinghe',
-        genre: 'Raw Audio',
-        year: '2025',
-        emoji: '🎙️',
-        color: '#f59e0b',
-        audioSrc: '/recordings/lu_010408.mp3', // <-- Replace with your actual audio path
-        featured: false,
-    },
+    // {
+    //     title: 'Studio Session #1',
+    //     artist: 'Tevinu Wijesinghe',
+    //     genre: 'Raw Audio',
+    //     year: '2025',
+    //     emoji: '🎙️',
+    //     color: '#f59e0b',
+    //     audioSrc: '/recordings/perawadanak_nathi.mp3', // <-- Replace with your actual audio path
+    //     featured: false,
+    // },
+    // {
+    //     title: 'Studio Session #2 (Lu)',
+    //     artist: 'Tevinu Wijesinghe',
+    //     genre: 'Raw Audio',
+    //     year: '2025',
+    //     emoji: '🎙️',
+    //     color: '#f59e0b',
+    //     audioSrc: '/recordings/lu_010408.mp3', // <-- Replace with your actual audio path
+    //     featured: false,
+    // },
 ];
 
 const TIKTOK_VIDEOS = [
@@ -68,23 +68,23 @@ const TIKTOK_VIDEOS = [
         tiktokId: '7633064254299573511',
         featured: false,
     },
-    {
-        title: 'By Me',
-        artist: 'Tevinu Wijesinghe',
-        genre: 'Music Production',
-        year: '2025',
-        emoji: '🎧',
-        color: '#25f4ee',
-        tiktokId:'7602172014605978888',
-        featured: false,
-    },
+    // {
+    //     title: 'By Me',
+    //     artist: 'Tevinu Wijesinghe',
+    //     genre: 'Music Production',
+    //     year: '2025',
+    //     emoji: '🎧',
+    //     color: '#25f4ee',
+    //     tiktokId:'7602172014605978888',
+    //     featured: false,
+    // },
 ];
 
 const FEATURED = {
     title: 'Nawum Kale',
     artist: 'Charitha Attalage | Chamara Nirmal | Chandrasena Thalangama',
     genre: '',
-    desc: 'A fusion of soulful melodies',
+    desc: '',
     tiktokId: '7633064254299573511',
     emoji: '🌙',
 };
@@ -128,7 +128,7 @@ export default function Music() {
                         color: '#ec4899', background: 'rgba(236,72,153,0.1)', border: '1px solid rgba(236,72,153,0.3)',
                         padding: '0.3rem 0.8rem', borderRadius: '999px', marginBottom: '1.5rem',
                     }}>
-                        ✨ FEATURED TRACK
+                        ✨ FEATURED COVER
                     </div>
 
                     <div className="featured-track-info">
@@ -183,11 +183,10 @@ export default function Music() {
                     </div>
                 </div>
 
-                {/* Track Grid */}
+                {/* Track Grid removed
                 <div className="music-grid">
                     {[...TRACKS, ...TIKTOK_VIDEOS].map((item, i) => (
-                        <div key={item.title} className={`glass-card track-card reveal reveal-delay-${i + 1}`}>
-                            {/* Cover art placeholder */}
+                       // <div key={item.title} className={`glass-card track-card reveal reveal-delay-${i + 1}`}>
                             <div style={{
                                 width: '100%',
                                 aspectRatio: '1',
@@ -202,7 +201,6 @@ export default function Music() {
                                 overflow: 'hidden',
                             }}>
                                 {item.emoji}
-                                {/* Waveform decoration */}
                                 <div style={{
                                     position: 'absolute',
                                     bottom: '0.75rem',
@@ -268,83 +266,12 @@ export default function Music() {
                         </div>
                     ))}
                 </div>
+                */}
 
-                {/* Draft Recordings */}
-                <div style={{ marginTop: '4rem' }}>
-                    <h3 className="reveal" style={{
-                        fontFamily: 'Orbitron, monospace', fontSize: '1.5rem', fontWeight: 700,
-                        color: 'var(--text-primary)', marginBottom: '1.5rem',
-                        display: 'flex', alignItems: 'center', gap: '0.5rem'
-                    }}>
-                        <span style={{ color: '#f59e0b' }}>🎙️</span> Draft Recordings
-                    </h3>
-                    <div className="music-grid">
-                        {RECORDINGS.map((item, i) => (
-                            <div key={item.title} className={`glass-card track-card reveal reveal-delay-${i + 1}`}>
-                                {/* Cover art placeholder */}
-                                <div style={{
-                                    width: '100%',
-                                    aspectRatio: '1',
-                                    borderRadius: '12px',
-                                    background: `linear-gradient(135deg, ${item.color}25, rgba(59,130,246,0.15))`,
-                                    border: `1px solid ${item.color}30`,
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    fontSize: '3rem',
-                                    position: 'relative',
-                                    overflow: 'hidden',
-                                }}>
-                                    {item.emoji}
-                                    {/* Waveform decoration */}
-                                    <div style={{
-                                        position: 'absolute',
-                                        bottom: '0.75rem',
-                                        left: '1rem',
-                                        right: '1rem',
-                                        display: 'flex',
-                                        alignItems: 'flex-end',
-                                        gap: '2px',
-                                        height: '30px',
-                                    }}>
-                                        {Array.from({ length: 30 }, (_, j) => (
-                                            <div key={j} style={{
-                                                flex: 1,
-                                                height: `${Math.random() * 100}%`,
-                                                minHeight: '3px',
-                                                background: item.color,
-                                                opacity: 0.5,
-                                                borderRadius: '1px',
-                                            }} />
-                                        ))}
-                                    </div>
-                                </div>
-
-                                <div className="track-info">
-                                    <h3 style={{ color: 'var(--text-primary)' }}>{item.title}</h3>
-                                    <p style={{ color: 'var(--text-muted)' }}>{item.genre} · {item.year}</p>
-                                </div>
-
-                                <div className="track-player">
-                                    <div style={{ display: 'flex', alignItems: 'center', height: '100%', minHeight: '60px', padding: '0 0.5rem' }}>
-                                        <audio
-                                            controls
-                                            controlsList="nodownload noplaybackrate"
-                                            onContextMenu={(e) => e.preventDefault()}
-                                            src={item.audioSrc}
-                                            style={{ width: '100%', outline: 'none' }}
-                                        >
-                                            Your browser does not support the audio element.
-                                        </audio>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                {/* Draft Recordings section commented out */}
 
                 {/* Soundcloud / Spotify links */}
-                 {/*  <div style={{ textAlign: 'center', marginTop: '4rem' }} className="reveal">
+                {/*  <div style={{ textAlign: 'center', marginTop: '4rem' }} className="reveal">
                     <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem', marginBottom: '1.25rem' }}>
                         Find my music on your favorite platforms
                     </p>
@@ -373,7 +300,7 @@ export default function Music() {
                             </a>
                         ))}
                     </div>
-                </div>*/}
+                </div> */}
             </div>
         </section>
     );
