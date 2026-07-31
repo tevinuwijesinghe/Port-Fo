@@ -113,7 +113,7 @@ const PROJECTS = [
             'YITH Wishlist',
         ],
         emoji: '👗',
-        image: '/images/fashion-store.png',
+        image: '#',
         gradient: 'from-pink-500 to-purple-500',
         color: '#ec4899',
         demo: '#',
