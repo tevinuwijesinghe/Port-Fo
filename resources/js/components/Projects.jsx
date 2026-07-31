@@ -97,6 +97,34 @@ const PROJECTS = [
             }
         ],
     },
+    {
+        title: 'Fashion Store E-Commerce Website',
+        desc: 'A responsive fashion e-commerce website developed with WordPress and WooCommerce, allowing customers to browse products, manage wishlists, add items to cart, complete checkout, and manage their accounts. The project also includes product management, order management, responsive storefront design, and administrative e-commerce features.',
+        stack: [
+            'WordPress',
+            'WooCommerce',
+            'Elementor',
+            'Blocksy',
+            'PHP',
+            'MySQL',
+            'HTML',
+            'CSS',
+            'JavaScript',
+            'YITH Wishlist',
+        ],
+        emoji: '👗',
+        image: '/images/fashion-store.png',
+        gradient: 'from-pink-500 to-purple-500',
+        color: '#ec4899',
+        demo: '#',
+        github: '#',
+        docs: [
+            {
+                label: 'Project Documentation',
+                href: '/docs/InstaSites_Fashion_Store_Documentation.pdf',
+            }
+        ],
+    },
 ];
 
 export default function Projects() {
