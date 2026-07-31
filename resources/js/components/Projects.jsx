@@ -112,7 +112,7 @@ const PROJECTS = [
             'JavaScript',
             'YITH Wishlist',
         ],
-        emoji: '👗',
+        emoji: '🧥',
         image: null,
         gradient: 'from-pink-500 to-purple-500',
         color: '#ec4899',
