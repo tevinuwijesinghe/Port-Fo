@@ -337,7 +337,7 @@ export default function Contact() {
                             className="contact-detail"
                         >
                             <span className="contact-detail-icon">📞</span>
-                            +94 740 927 966
+                            +94 727 927 966
                         </a>
 
                         <span className="contact-detail">
