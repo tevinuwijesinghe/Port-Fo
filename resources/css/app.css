@@ -1121,30 +1121,49 @@ body {
 
 .contact-detail {
     display: flex;
-    align-items: center;
-    gap: 0.75rem;
+    align-items: flex-start;
+    gap: 0.9rem;
+    width: 100%;
+
+    padding: 0.85rem 1rem;
+
     color: var(--text-muted);
-    font-size: 0.875rem;
-    margin-bottom: 0.75rem;
     text-decoration: none;
-    transition: color 0.3s ease;
+
+    border-radius: 12px;
+
+    transition: all .25s ease;
+
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
-.contact-detail:hover {
+.contact-detail:hover{
     color: var(--neon-purple);
+    background: rgba(168,85,247,.06);
 }
 
-.contact-detail-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    background: rgba(168, 85, 247, 0.1);
-    border: 1px solid rgba(168, 85, 247, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    flex-shrink: 0;
+.contact-detail-icon{
+    width:40px;
+    height:40px;
+    flex-shrink:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:10px;
+
+    background:rgba(168,85,247,.10);
+    border:1px solid rgba(168,85,247,.20);
+
+    font-size:1rem;
+}
+
+.contact-detail-text{
+    flex:1;
+    min-width:0;
+    line-height:1.6;
 }
 
 .social-links {
@@ -1428,4 +1447,77 @@ body {
     .github-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+/* Tablets */
+@media (max-width:768px){
+
+    .contact-info{
+        text-align:center;
+    }
+
+    .contact-detail{
+        text-align:left;
+    }
+
+    .contact-detail-icon{
+        width:38px;
+        height:38px;
+    }
+
+    .cv-btn{
+        width:100%;
+        justify-content:center;
+    }
+
+    .social-links{
+        justify-content:center;
+    }
+}
+
+
+/* Phones */
+@media (max-width:480px){
+
+    .contact-detail{
+        gap:.75rem;
+        padding:.75rem;
+        font-size:.88rem;
+    }
+
+    .contact-detail-icon{
+        width:34px;
+        height:34px;
+        font-size:.9rem;
+    }
+
+    .contact-detail-text{
+        line-height:1.5;
+    }
+
+    .social-link{
+        width:40px;
+        height:40px;
+    }
+
+    .cv-btn{
+        font-size:.75rem;
+        padding:.8rem 1rem;
+    }
+}
+
+
+/* Small phones */
+@media (max-width:360px){
+
+    .contact-detail{
+        font-size:.8rem;
+    }
+
+    .contact-detail-icon{
+        width:30px;
+        height:30px;
+        font-size:.8rem;
+    }
+
 }

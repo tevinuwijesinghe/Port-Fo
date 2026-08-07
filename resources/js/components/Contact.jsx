@@ -294,11 +294,10 @@ export default function Contact() {
                 <div
                     className="contact-info reveal reveal-delay-1 glass-card"
                     style={{
-                        width: '100%',
-                        maxWidth: '750px',
-                        padding: '2.5rem',
-                        textAlign: 'center',
-                    }}
+                            width:'100%',
+                            maxWidth:'750px',
+                            padding:'clamp(1.2rem,4vw,2.5rem)'
+                        }}
                 >
                     <h3>Have a project in mind?</h3>
 
@@ -314,38 +313,34 @@ export default function Contact() {
                         something extraordinary together.
                     </p>
 
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            marginLeft: 'auto',
-                            marginRight: 'auto',
-                            gap: '0.75rem',
-                        }}
-                    >
-                        <a
-                            href="mailto:tevinuwijesinghe@gmail.com"
-                            className="contact-detail"
-                        >
-                            <span className="contact-detail-icon">📧</span>
-                            tevinuwijesinghe@gmail.com
-                        </a>
+                    <div className="contact-details-list">
+    <a
+        href="mailto:tevinuwijesinghe@gmail.com"
+        className="contact-detail"
+    >
+        <span className="contact-detail-icon">📧</span>
+        <span className="contact-detail-text">
+            tevinuwijesinghe@gmail.com
+        </span>
+    </a>
 
-                        <a
-                            href="tel:+94740927966"
-                            className="contact-detail"
-                        >
-                            <span className="contact-detail-icon">📞</span>
-                            +94 727 927 966
-                        </a>
+    <a
+        href="tel:+94727927966"
+        className="contact-detail"
+    >
+        <span className="contact-detail-icon">📞</span>
+        <span className="contact-detail-text">
+            +94 727 927 966
+        </span>
+    </a>
 
-                        <span className="contact-detail">
-                            <span className="contact-detail-icon">📍</span>
-                            No. 22, Ambagaha Junction, Rajagiriya, Colombo,
-                            Sri Lanka
-                        </span>
-                    </div>
+    <div className="contact-detail">
+        <span className="contact-detail-icon">📍</span>
+        <span className="contact-detail-text">
+            No. 22, Ambagaha Junction, Rajagiriya, Colombo, Sri Lanka
+        </span>
+    </div>
+</div>
 
                     <a
                         href="/Tevinu_Wijesinghe Resume 2026-08.pdf"
