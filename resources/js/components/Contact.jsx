@@ -348,7 +348,7 @@ export default function Contact() {
                     </div>
 
                     <a
-                        href="/cv.pdf"
+                        href="/Tevinu_Wijesinghe Resume 2026-08.pdf"
                         download
                         className="cv-btn"
                         style={{
