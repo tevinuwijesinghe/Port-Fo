@@ -342,17 +342,16 @@ export default function Contact() {
     </div>
 </div>
 
-                    <a
-                        href="/Tevinu_Wijesinghe Resume 2026-08.pdf"
-                        download
-                        className="cv-btn"
-                        style={{
-                            display: 'inline-flex',
-                            marginTop: '2rem',
-                        }}
-                    >
-                        ⬇️ Download CV / Resume
-                    </a>
+                    <div className="cv-btn-wrapper">
+    <a
+        href="/Tevinu_Wijesinghe Resume 2026-08.pdf"
+        download
+        className="cv-btn"
+    >
+        <span className="cv-btn-icon">⬇️</span>
+        <span>Download CV / Resume</span>
+    </a>
+</div>
 
                     <div
                         className="social-links"
