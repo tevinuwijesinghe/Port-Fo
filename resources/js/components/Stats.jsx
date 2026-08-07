@@ -82,7 +82,7 @@ export default function Stats() {
                 {/* GitHub button */}
                 <div style={{ textAlign: 'center', marginTop: '2rem' }} className="reveal">
                     <a
-                        href="https://github.com"
+                        href="https://github.com/tevinuwijesinghe"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-outline"
