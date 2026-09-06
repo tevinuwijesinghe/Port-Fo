@@ -10,7 +10,7 @@ const PROJECTS = [
         image: '/images/servilogonobg.png',
         gradient: 'from-purple-500 to-blue-500',
         color: '#a855f7',
-        demo: '#',
+        //demo: '#',
         github: 'https://github.com/tevinuwijesinghe/ServiGo',
         docs:[
             {
@@ -33,7 +33,7 @@ const PROJECTS = [
         image: '/images/kuweni_1.svg',
         gradient: 'from-yellow-500 to-gray-900',
         color: '#d4af37',
-        demo: '#',
+        //demo: '#',
         github: '#',
         docs: [
             {
@@ -62,7 +62,7 @@ const PROJECTS = [
         image: '/images/hotchop.png',
         gradient: 'from-orange-500 to-yellow-500',
         color: '#f59e0b',
-        demo: '#',
+        //demo: '#',
         github: 'https://github.com/tevinuwijesinghe/HotChop',
         docs: [
             {
@@ -88,7 +88,7 @@ const PROJECTS = [
         image: '/images/yoo-chat-logo.png',
         gradient: 'from-cyan-500 to-blue-500',
         color: '#38bdf8',
-        demo: '#',
+        //demo: '#',
         github: '#',
         docs: [
             {
@@ -116,7 +116,7 @@ const PROJECTS = [
         image: null,
         gradient: 'from-pink-500 to-purple-500',
         color: '#ec4899',
-        demo: '#',
+        // demo: '#',
         github: '#',
         docs: [
             {
