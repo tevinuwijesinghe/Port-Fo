@@ -79,6 +79,8 @@ const CATEGORIES = [
             { name: 'Agile / Scrum', pct: 82 },
             { name: 'SDLC', pct: 90 },
             { name: 'JUnit', pct: 75 },
+            { name: 'Postman', pct: 75 },
+            { name: 'Mockito', pct: 75 },
         ],
     },
     {
