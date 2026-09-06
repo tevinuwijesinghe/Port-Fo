@@ -249,10 +249,10 @@ export default function Projects() {
                                     </div>
                                 </div>
                                 <div className="project-links" style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                                    <a href={p.demo} className="project-btn primary" target="_blank" rel="noopener noreferrer"
+                                    {/* <a href={p.demo} className="project-btn primary" target="_blank" rel="noopener noreferrer"
                                        style={{ background: `linear-gradient(135deg, ${p.color}, #3b82f6)` }}>
                                         🚀 Live Demo
-                                    </a>
+                                    </a> */}
                                     <a href={p.github} className="project-btn secondary" target="_blank" rel="noopener noreferrer"
                                        style={{ borderColor: `${p.color}50`, color: p.color }}>
                                         ⭐ GitHub
