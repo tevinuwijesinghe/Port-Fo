@@ -337,7 +337,7 @@ export default function Contact() {
     <div className="contact-detail">
         <span className="contact-detail-icon">📍</span>
         <span className="contact-detail-text">
-            No. 22, Ambagaha Junction, Rajagiriya, Colombo, Sri Lanka
+            Rajagiriya, Colombo, Sri Lanka
         </span>
     </div>
 </div>
