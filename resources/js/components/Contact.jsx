@@ -344,7 +344,7 @@ export default function Contact() {
 
                     <div className="cv-btn-wrapper">
     <a
-        href="/Tevinu_Manuditha_Wijesinghe_Resume_2026-09-06.pdf"
+        href="/Tevinu_Manuditha_Wijesinghe_2026-09-06.pdf"
         download
         className="cv-btn"
     >
